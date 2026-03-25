@@ -1,0 +1,25 @@
+DATASET CURATION PROTOCOL
+=========================
+Search databases : PubMed, Web of Science, Scopus
+Query            : "mesenchymal stem cell" AND ("hydrogel" OR "scaffold")
+                   AND ("osteogenesis" OR "chondrogenesis" OR "adipogenesis")
+                   AND ("pore size" OR "Young's modulus")
+Date range       : 2000-2025
+
+INCLUSION
+  1. Human or murine BM-MSCs in 3D scaffold (not 2D film).
+  2. Quantitative Rp [um] AND/OR E [kPa] reported.
+  3. Lineage by IHC/qPCR: Runx2/ALP=osteo; Sox9/Col2=chondro; PPARg=adipo.
+  4. No confounding exogenous factors OR factorial design isolating cues.
+
+EXCLUSION
+  - Differentiation induction media without physical-cue arm
+  - Non-MSC cell types
+  - 2D-only stiffness measurements
+
+MISSING E ESTIMATION
+  Alginate : E ~ 0.12 * c^2.5  (kPa, c in w/v%)  [Tibbitt 2009]
+  PEG      : E ~ 0.05 * c^2.0  [Tibbitt 2009]
+  Collagen : E ~ 0.08 * c^1.7  [Raub 2007]
+  GelMA    : E ~ 0.30 * c^2.2  [Nichol 2010]
+  Flagged E_estimated=True in dataset.
